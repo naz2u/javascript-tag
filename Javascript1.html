@@ -1,0 +1,116 @@
+ <!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Untitled Document</title>
+    </head>
+    
+    <body bgcolor="#00CC33">
+    	<script>
+			function check()
+			{
+				
+			boss="";
+			for(i=0;i<4;i++)
+			
+			{
+				var x =document.form1.elements[i];
+				boss+=x.name+":"+x.value+"\n"
+				
+				}
+				
+				for(i=4;i<6;i++)
+				
+				{
+					var x =document.form1.elements[i];
+					if(x.checked)
+					{
+						boss+=x.name+":"+x.value+"\n"
+					}
+				
+				}
+				
+				boss+="Like:"
+				for(i=6;i<9;i++)
+				
+				{
+					var x =document.form1.elements[i];
+					if(x.checked)
+					
+					{
+						
+					boss+=x.value+","
+					
+					}
+					
+				}
+					boss+="\n Country:"
+					var y =document.form1.country.selectedIndex;
+					var z =document.form1.country.options[y].value;
+					boss+=z
+					//document.write(boss)
+					document.getElementById('valo').value=boss
+			}
+        	
+        </script>
+        
+        <form name="form1">
+        	<table width="476" border="0">
+                    <tr>
+                        <td width="95">Name:</td>
+                        <td width="371"><input type="text"  name="Name"/></td>
+                    </tr>
+                    <tr>
+                        <td>Address:</td>
+                        <td><input type="text"  name="Address"/></td>
+                    </tr>
+                     <tr>
+                        <td>City:</td>
+                        <td><input type="text" name="City"/></td>
+                    </tr>
+                     <tr>
+                        <td>Mobile:</td>
+                        <td><input type="text" name="Mobile"</td>
+                    </tr>
+                     <tr>
+                        <td>Gender:</td>
+                        	<td>
+                                <input type="radio" Name="gender" value="Male"/>Male
+                                <br/>
+                                <input type="radio" Name="gender" value="female"/>female
+                                <br/>
+                       		 </td>
+                     </tr>
+                     <tr>
+                     	<td>Like</td>
+                        <td>
+                            <input type="checkbox" name="" value="Tomato"/>
+                            Tomato<br/>
+                           <input type="checkbox" name="" value="Mango"/>
+                            Mango<br/>
+                            <input type="checkbox" name="" value="Orange"/>
+                            Orange<br/>
+                     	</td>
+                     </tr>
+                     <tr>
+                     	<td>Country:</td>
+                        <td>
+                            <select name="country">
+                                <option value="..select..">..select..</option>
+                                <option value="Bangladesh">Bangladesh</option>
+                                <option value="India">India</option>
+                                <option value="Pakistan">Pakistan</option>
+                            </select>
+                        </td>  
+                    </tr> 
+                    <tr>
+                        <td colspan="2"><input type="button" name="submit" value="submit" onClick="check()"/>
+                        <input type="reset"  name="submit2" value="reset"/></td>
+                    </tr> 
+                    <tr>
+                    	<td colspan="2"><textarea name="textarea" cols="50" rows="10" id="valo"></textarea> </td>
+                    </tr>                                
+            </table>
+        </form>
+    </body>
+</html>
